@@ -9,11 +9,14 @@ const cors=require("cors")
 const corsOptions=require("./config/corsOptions")
 
 const  homeRoute = require("./routes/web");
-const {registerUserRoute,loginUserRoute}  = require("./routes/api");
+const {registerUserRoute,loginUserRoute,generalBTCCommandsRoute}  = require("./routes/api");
 
 const path=require('path');
 
-const PORT=process.env.PORT || 3500;
+// console.log(ENV);
+
+
+const PORT=3500;
  
 //middleware- starts with app.use()
 //built-in json middleware, it allows for extracting json data from the requests 
@@ -43,6 +46,7 @@ app.use(customErrorHandler);
 app.use(homeRoute)
 app.use(registerUserRoute)
 app.use(loginUserRoute)
+app.use(generalBTCCommandsRoute)
 
 
 app.listen(PORT,()=>console.log(`Server running on port ${PORT}`))

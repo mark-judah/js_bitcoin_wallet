@@ -1,5 +1,10 @@
 const bcrypt = require("bcrypt");
 
+const jwt=require('jsonwebtoken');
+require('dotenv').config();
+const fsPromises=require('fs').promises;
+const path=require('path');
+
 const usersDB = {
     users: require('../models/users.json'),
     setUsers: function (data) {
@@ -22,6 +27,10 @@ const loginHandler = async (req, res) => {
     const match=await bcrypt.compare(pwd,foundUser.password);
     if(match){
         //create JWT tokens
+        const accessToken=jwt.sign(
+            {"username":foundUser.username},
+                process.env.ACCESS_TOKEN_SECRET
+        )
         return res.status(200).json({ 'success': `User ${uname} is logged in` })
     }else{
         return res.status(401);//unauthorized
