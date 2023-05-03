@@ -1,5 +1,4 @@
-const { testnet } = require("bitcore-lib/lib/networks");
-const { createWallet, createHDWallet }=require("./controllers/walletController");
+const { createWallet,createMnemonic }=require("./controllers/walletController");
 const express=require("express");
 const app=express()
 const {logEvents,logger}=require("./middleware/logs")
@@ -9,7 +8,7 @@ const cors=require("cors")
 const corsOptions=require("./config/corsOptions")
 
 const  homeRoute = require("./routes/web");
-const {registerUserRoute,loginUserRoute,generalBTCCommandsRoute}  = require("./routes/api");
+const {registerUserRoute,loginUserRoute,generalBTCCommandsRoute, walletRouter, createWalletRoute, getWalletInfoRoute, createWalletSeedRouter, createMnemonicRouter}  = require("./routes/api");
 
 const path=require('path');
 
@@ -47,6 +46,9 @@ app.use(homeRoute)
 app.use(registerUserRoute)
 app.use(loginUserRoute)
 app.use(generalBTCCommandsRoute)
-
+app.use(createMnemonicRouter)
+app.use(createWalletRoute)
+app.use(getWalletInfoRoute)
+app.use(createWalletSeedRouter)
 
 app.listen(PORT,()=>console.log(`Server running on port ${PORT}`))
