@@ -1,4 +1,3 @@
-const { createWallet,createMnemonic }=require("./controllers/walletController");
 const express=require("express");
 const app=express()
 const {logEvents,logger}=require("./middleware/logs")
@@ -8,12 +7,14 @@ const cors=require("cors")
 const corsOptions=require("./config/corsOptions")
 
 const  homeRoute = require("./routes/web");
-const {registerUserRoute,loginUserRoute,generalBTCCommandsRoute, walletRouter, createWalletRoute, getWalletInfoRoute, createWalletSeedRouter, createMnemonicRouter}  = require("./routes/api");
+const {registerUserRoute,loginUserRoute,generalBTCCommandsRoute, 
+   createWalletRoute,setWalletSeedRoute, getWalletInfoRoute, createWalletSeedRouter, 
+    createMnemonicRouter,getNewAddressRoute, dumpWalletRoute}  = require("./routes/api");
 
 const path=require('path');
 
 // console.log(ENV);
-
+//move port to .env
 
 const PORT=3500;
  
@@ -48,7 +49,10 @@ app.use(loginUserRoute)
 app.use(generalBTCCommandsRoute)
 app.use(createMnemonicRouter)
 app.use(createWalletRoute)
+app.use(setWalletSeedRoute)
 app.use(getWalletInfoRoute)
 app.use(createWalletSeedRouter)
+app.use(getNewAddressRoute)
+app.use(dumpWalletRoute)
 
 app.listen(PORT,()=>console.log(`Server running on port ${PORT}`))

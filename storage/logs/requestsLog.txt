@@ -904,3 +904,369 @@
 
 20230503	01:43:46	6b91b47a-6493-49c1-8a0a-583c009294c4	POST	undefined	/wallet-info
 
+20230504	00:44:25	e9083640-0d1f-4ebb-a958-9ad517ccda38	POST	undefined	/dump-wallet
+
+20230504	00:44:48	6bb3bcf0-22b8-406e-b041-36d3d277e348	POST	undefined	/dump-wallet
+
+20230504	00:45:08	3ffae4ac-6ebc-4c3f-b240-3eee89cbf584	POST	undefined	/dump-wallet
+
+20230504	00:47:05	691d89e6-1cb6-4d5a-a95b-47fcd20949e6	POST	undefined	/dump-wallet
+
+20230504	00:47:35	34caab03-3cba-498f-9629-d597954336ca	POST	undefined	/dump-wallet
+
+20230504	00:48:01	ab7088e8-0a16-443b-a6eb-3778ab2f345d	POST	undefined	/dump-wallet
+
+20230504	00:51:20	8f99e93e-9a5e-4b6f-9a07-ec3f29bc1f22	POST	undefined	/dump-wallet
+
+20230504	01:00:03	7bfc340e-5f16-43cd-8453-9e9605b4c60d	POST	undefined	/dump-wallet
+
+20230504	01:07:07	1018905d-d214-47be-9190-3a67ad431306	POST	undefined	/dump-wallet
+
+20230504	01:07:27	65e1ab36-ae9d-4562-a018-2f794fc546c5	POST	undefined	/dump-wallet
+
+20230504	01:12:47	e4606fb4-3df8-4298-b503-fe6282a39353	POST	undefined	/wallet-info
+
+20230504	01:15:47	e2460d8f-dcf8-429e-b638-68e3ad440b00	POST	undefined	/dump-wallet
+
+20230504	01:21:58	f0c13223-dbfc-427f-bbe6-5bff534e652a	POST	undefined	/dump-wallet
+
+20230504	01:31:13	412b4359-21f3-43ee-a904-e951b27723e9	POST	undefined	/dump-wallet
+
+20230504	01:33:28	d0658495-cc20-4831-bcb4-3e8a364c303d	POST	undefined	/dump-wallet
+
+20230504	01:36:52	6e0bfd97-5e1b-41f9-8d45-c844ec908607	POST	undefined	/dump-wallet
+
+20230504	01:37:22	38c28d55-dd99-4aa0-9eee-2883096052b3	POST	undefined	/dump-wallet
+
+20230504	01:37:54	66b40b83-e55f-4002-b637-c081a0fddcdb	POST	undefined	/dump-wallet
+
+20230504	01:44:07	3487a334-51b4-4708-8222-f5291210f0c7	POST	undefined	/dump-wallet
+
+20230504	01:44:46	854b4852-d6c7-4237-bc7c-796a55b45643	POST	undefined	/dump-wallet
+
+20230504	18:00:58	9a6cb384-9615-456f-8629-889b6ac8b153	POST	undefined	/create-mnemonic
+
+20230504	18:10:41	fa7a3ba1-88af-403f-b053-4269350ea069	POST	undefined	/create-wallet
+
+20230504	18:11:59	3ee6b16f-88f1-4c92-92ba-b59ac6d9d74a	POST	undefined	/create-wallet
+
+20230504	18:12:05	2f17bdc3-86fc-4648-929b-bcc9ee697451	POST	undefined	/create-wallet
+
+20230504	18:21:01	459da523-b961-4038-b966-9672aaba844e	POST	undefined	/create-wallet
+
+20230504	18:48:19	12419077-9728-4e6e-8190-9cd8b205e8ac	POST	undefined	/create-mnemonic
+
+20230504	19:42:17	1034a562-de01-414a-be41-b95fa5105ef1	POST	undefined	/create-mnemonic
+
+20230504	19:42:35	87cc342f-475b-4c65-80ef-fc9795628204	POST	undefined	/create-wallet-seed
+
+20230509	22:06:52	6e97618b-0551-49f8-a6bc-5039d11497fc	POST	undefined	/create-mnemonic
+
+20230509	22:07:13	c3dec735-bab6-4c06-b044-66993048c376	POST	undefined	/create-wallet-seed
+
+20230509	22:13:49	a213a667-44ff-48eb-8bd7-879a87e8ea16	POST	undefined	/create-mnemonic
+
+20230509	22:16:08	2c10435f-cae9-49c6-89bc-850cc7e85f6e	POST	undefined	/create-wallet-seed
+
+20230510	22:05:40	f8aece77-9fee-46db-8f22-5646feac3054	POST	undefined	/create-mnemonic
+
+20230510	22:18:41	1f5a25e6-939a-40b4-8096-418fa8515c01	POST	undefined	/create-mnemonic
+
+20230510	23:38:57	13cd27b6-5311-41e9-ae27-3907dd4dec41	POST	undefined	/create-mnemonic
+
+20230511	00:02:15	e6e21407-1b4a-44ec-ac37-022ce514fe2d	POST	undefined	/create-mnemonic
+
+20230513	01:19:29	1e401ddb-f5ea-4153-a5ae-4ab3c2fc018d	POST	undefined	/create-mnemonic
+
+20230513	02:19:05	7ede529c-511b-4d68-b794-34403d10d46b	POST	undefined	/create-mnemonic/create-mnemonic
+
+20230513	02:19:47	5a98309d-e03a-46e5-9799-492be49a4df6	POST	undefined	/create-mnemonic/create-mnemonic
+
+20230513	02:20:27	3f1dcd13-c5fc-4d8f-aef6-b6662e11176b	POST	undefined	/create-mnemonic/create-mnemonic
+
+20230513	02:22:02	e0f9eb58-f031-4d91-b9b0-3d6f41ff4fc8	POST	undefined	/create-mnemonic/create-mnemonic
+
+20230513	02:22:54	61d80b7b-d1b3-4e8e-adb6-e659c05b4073	POST	undefined	/create-mnemonic/create-mnemonic
+
+20230513	02:27:14	3fa1ffca-ecc2-4887-a684-0ee72c4b8307	POST	undefined	/create-mnemonic
+
+20230513	02:49:06	8aafa8da-740d-4614-87e7-5cb90271c953	POST	undefined	/create-mnemonic
+
+20230513	02:50:58	d8b73c86-7ca3-4e9f-9345-76b66b4aa483	POST	undefined	/create-mnemonic
+
+20230513	02:51:39	1a8358be-db55-4bfa-ac0d-2b8e7297e994	POST	undefined	/create-mnemonic
+
+20230513	03:14:21	11d1a4fd-2263-4f63-9c33-e86f99a3adce	POST	undefined	/create-mnemonic
+
+20230513	03:27:51	f0efcd67-dfca-412f-86b4-7143ee2f386e	POST	undefined	/create-mnemonic
+
+20230513	03:28:15	98242b9c-e86c-447e-bc33-3567f0b37aaf	POST	undefined	/create-mnemonic
+
+20230513	17:11:18	449bce91-b6e4-4a0c-a57d-ced415bb6b1e	POST	undefined	/create-mnemonic
+
+20230513	17:13:59	3eb875b3-c8ef-42d6-b807-ffd17cf0b62a	POST	undefined	/create-mnemonic
+
+20230513	18:27:34	d5e080e1-68fd-482c-b388-8abfbf1a6790	POST	undefined	/create-mnemonic
+
+20230513	18:32:21	3c110aa5-65a9-4737-9a73-db523a822550	POST	undefined	/create-mnemonic
+
+20230513	18:43:14	ff58ca1e-3f98-423f-823d-a98802932723	POST	undefined	/create-mnemonic
+
+20230513	18:52:32	b3226275-513e-44e8-8e7b-e39820f1ff1c	POST	undefined	/create-mnemonic
+
+20230513	19:01:59	2bcd8f59-07d3-4070-8487-118450baf614	POST	undefined	/create-mnemonic
+
+20230513	19:28:40	cf1bcc2f-76e8-4366-8eab-87fe1b4a03f2	POST	undefined	/create-mnemonic
+
+20230513	19:30:50	1cd94966-2dbd-4b37-9549-46ec240b51a9	POST	undefined	/create-mnemonic
+
+20230513	19:32:18	fa9d7c3d-4c99-405e-a288-b55edc18c90f	POST	undefined	/create-mnemonic
+
+20230513	19:33:01	2433f44d-bb5b-436d-b8e4-5a9c0231f3a3	POST	undefined	/create-mnemonic
+
+20230513	19:35:09	f8562b82-3a48-4855-9873-07e3a01675dc	POST	undefined	/create-mnemonic
+
+20230516	01:06:49	7ebfbb7a-e63c-4260-ab08-81d73e963860	POST	undefined	/create-mnemonic
+
+20230516	01:06:54	23c664c0-1490-4be7-be40-4c0172eb035c	POST	undefined	/create-mnemonic
+
+20230516	01:08:53	9bebf473-ec30-44ac-a163-e8ed65a289c0	POST	undefined	/create-mnemonic
+
+20230516	01:10:25	451a3c7d-08b6-4a44-bb24-4a3bd46af3a6	POST	undefined	/create-mnemonic
+
+20230516	01:10:41	1f41d93d-38a6-45a7-93df-32c24660ba2f	POST	undefined	/create-mnemonic
+
+20230516	01:15:07	36fc0f77-b094-44ee-a4b3-b0a19749ebc9	POST	undefined	/create-mnemonic
+
+20230516	01:16:01	f8d7af26-8152-4bac-afe8-8bfb1aeb584e	POST	undefined	/create-mnemonic
+
+20230516	01:21:38	851adf66-16ca-4ebc-95a4-499028d39803	POST	undefined	/create-mnemonic
+
+20230516	01:44:43	70f85f9f-d6dd-42cc-95c4-e85758c9cb47	POST	undefined	/create-mnemonic
+
+20230516	01:49:18	cef688c0-bf7b-43d1-b0d9-35a2257f57c0	POST	undefined	/create-mnemonic
+
+20230516	01:49:59	8d635682-a7fb-4ee7-bab6-d83f6d2b87ad	POST	undefined	/create-wallet-seed
+
+20230516	01:53:26	00d60051-56a4-41f4-bca5-b946763775c3	POST	undefined	/create-wallet-seed
+
+20230516	02:03:57	aead0e0a-abdd-450a-ad17-ee2930e07089	POST	undefined	/create-wallet-seed
+
+20230516	02:14:40	04112bef-00c5-41e4-b23e-e66680f6d23d	POST	undefined	/create-wallet-seed
+
+20230516	02:19:13	6320da08-9989-49d9-b7b1-ece81ecf3430	POST	undefined	/create-wallet-seed
+
+20230516	02:23:17	87b2d5d0-fba7-4824-9342-7578d29aaa86	POST	undefined	/create-wallet-seed
+
+20230516	02:43:41	8ceffc10-874d-43a5-b0e4-8a27dba991f8	POST	undefined	/create-wallet-seed
+
+20230516	03:52:02	3ae53b1c-2f70-4ae7-a359-642df2b37f84	POST	undefined	/create-mnemonic
+
+20230516	03:53:40	76602e30-3fb8-49e2-95d2-2767b8f00b0b	POST	undefined	/create-wallet
+
+20230516	03:54:44	4f6640a7-6dec-49ba-beab-337e3e7d9e8f	POST	undefined	/create-mnemonic
+
+20230516	03:54:57	1638b5e0-cfa0-43f3-bd03-95793c01b921	POST	undefined	/create-wallet-seed
+
+20230516	03:55:07	3c92bd1e-ec40-4236-8530-8a885b07aa24	POST	undefined	/create-wallet
+
+20230516	04:00:52	ab94d877-c015-462c-a832-460bb2751b7a	POST	undefined	/create-wallet-seed
+
+20230516	04:01:10	fb57444b-a5c1-4654-a408-bd99e3583b1a	POST	undefined	/create-wallet
+
+20230518	00:57:18	5900c3ac-524f-45f7-a5fd-f5e64ea0a5b4	POST	undefined	/new-address
+
+20230518	00:58:50	d1746a6d-f8e2-432c-8665-0a2a6a866cbd	POST	undefined	/new-address
+
+20230518	01:05:47	ea6ca1af-f30b-40d1-80a0-6f4565783ce7	POST	undefined	/new-address
+
+20230518	01:07:05	cdd83c9e-38b4-4d98-a98b-4d4a20f3da9c	POST	undefined	/new-address
+
+20230518	01:17:55	e50c8261-6428-4270-9f21-04a737a8b1d3	POST	undefined	/new-address
+
+20230518	01:21:00	dc118e9a-6ed9-4953-80ed-492962e3764d	POST	undefined	/new-address
+
+20230518	02:04:31	7abeb029-f7cb-4e3d-8e48-011cd693a2f9	POST	undefined	/new-address
+
+20230518	04:27:10	d3ff6849-f9a8-4165-9341-edc045cc72ed	POST	undefined	/new-address
+
+20230518	04:49:26	c4618668-11dd-4648-bf04-ae8d29fae28c	POST	undefined	/new-address
+
+20230518	04:50:50	bf671b74-f25f-473b-ad70-a224672e75d6	POST	undefined	/new-address
+
+20230518	04:52:05	0655e799-119c-4eb2-8158-263482495aa9	POST	undefined	/new-address
+
+20230518	04:52:56	cb77aa61-ca09-4f2a-9a61-3e10bafe5937	POST	undefined	/new-address
+
+20230518	04:54:12	f0afbb50-6221-4519-a38a-72c76e4f9ac5	POST	undefined	/new-address
+
+20230518	04:55:16	6ae59da8-78d7-4a74-b025-474c1393a311	POST	undefined	/new-address
+
+20230518	04:57:39	96ff7ad8-49a8-4bcc-b7e7-819890699c13	POST	undefined	/new-address
+
+20230518	05:00:57	611dd592-3e4c-403f-adec-3cf131ac4ee0	POST	undefined	/new-address
+
+20230518	05:05:39	dca98fbf-5637-4aad-a2b7-18dfd2c0fcbd	POST	undefined	/new-address
+
+20230518	05:08:31	ffb9d910-5073-495d-b8e3-e82ea18ac1c8	POST	undefined	/new-address
+
+20230518	05:12:12	2fcabeff-9f16-4fda-bbf7-37c1ec95747b	POST	undefined	/new-address
+
+20230518	05:15:14	7c15538c-61c6-47d9-ab03-29667f0f20a0	POST	undefined	/new-address
+
+20230518	05:16:34	01cdb202-1c87-41c6-bae7-d08db7b515f2	POST	undefined	/new-address
+
+20230518	05:17:31	0dd25b88-98e9-4bcc-8709-c6d898fbaa1b	POST	undefined	/new-address
+
+20230518	05:18:32	fd05537d-32bc-4195-ae6d-01609931c1a0	POST	undefined	/new-address
+
+20230518	05:23:41	2bbce18d-fa2f-4b14-80a1-de950eb965e5	POST	undefined	/new-address
+
+20230518	05:26:08	ddb942ba-a409-4149-9240-a519569c33da	POST	undefined	/new-address
+
+20230518	05:28:31	17f53bbf-e68c-4332-a94a-fb149a3c0c0a	POST	undefined	/new-address
+
+20230518	05:29:27	f043654f-525b-4359-9846-1109cee8302f	POST	undefined	/new-address
+
+20230518	05:29:52	6526baca-8c4f-4c85-88f5-f93cf4719c89	POST	undefined	/new-address
+
+20230518	05:34:10	bce544bd-b40a-40c3-b7a9-40913749e910	POST	undefined	/new-address
+
+20230518	05:35:52	f0925022-5945-45aa-a0b0-0f0c0835ed4b	POST	undefined	/new-address
+
+20230518	05:39:16	d9efa003-828c-4829-bab4-d595dc5a6549	POST	undefined	/new-address
+
+20230518	05:43:44	650bbda1-ac3b-41ec-900d-112761aaeeff	POST	undefined	/new-address
+
+20230518	05:46:35	5f7f3af8-b7ee-4050-a209-c60b5223eb18	POST	undefined	/new-address
+
+20230518	23:40:40	bc98309b-5602-448b-993d-6ffebb0ac933	POST	undefined	/block-info
+
+20230518	23:41:44	7c3e2fbf-37a1-4e3a-91c4-4ff899dce037	POST	undefined	/wallet-info
+
+20230518	23:41:57	0496d434-0aca-4f54-ade5-a93a1dcd944c	POST	undefined	/wallet-info
+
+20230518	23:50:55	9d9b3dbc-a136-4f32-907b-ffe1b902e3e9	POST	undefined	/create-wallet
+
+20230518	23:51:12	ebd36889-7e2d-4db2-9ef1-a21c1f4d09d7	POST	undefined	/get-address
+
+20230518	23:51:33	40b54bc6-a518-418e-a0e5-50af0b3c2ef9	POST	undefined	/new-address
+
+20230518	23:51:54	4c0a7a55-a004-4ab0-b58d-0af2271f87b6	POST	undefined	/create-wallet
+
+20230518	23:53:01	808642c6-aa64-419f-84ea-48119282de2e	POST	undefined	/new-address
+
+20230518	23:54:24	15f7a9ce-f89e-498c-9e24-c816b88d7c38	POST	undefined	/new-address
+
+20230518	23:55:06	6f9d5fc7-de56-41f4-b52c-a0b0623dbc0d	POST	undefined	/new-address
+
+20230519	00:09:56	cc470c37-fc1a-4304-9fda-30feeff7d659	POST	undefined	/new-address
+
+20230519	00:43:28	dfcd39b2-ecba-4192-8f38-4201061672c7	POST	undefined	/create-mnemonic
+
+20230519	00:45:17	e0bf3642-4e57-4013-b2e9-dab06284962e	POST	undefined	/create-wallet-seed
+
+20230519	00:45:39	4cb9f94d-b066-4900-a26c-9ae6cb00473d	POST	undefined	/create-wallet
+
+20230519	00:45:41	55b14917-e2a5-4df0-b163-0adc4c2fab32	POST	undefined	/new-address
+
+20230519	01:32:19	b9c73d9d-6a9a-495d-9bba-72155fa50372	POST	undefined	/set-wallet-seed
+
+20230519	01:48:49	cd084e5a-ef26-4479-914f-8aae1bc7a38f	POST	undefined	/create-mnemonic
+
+20230519	01:49:09	3463fc1e-7180-4358-a85b-0dfb9f6c9a8c	POST	undefined	/create-wallet-seed
+
+20230519	01:49:33	1d60ddb6-9fb8-46b5-9be1-8f58cc86a43b	POST	undefined	/create-wallet
+
+20230519	01:49:35	cd371624-2592-4674-ab8f-0e9a82df30cf	POST	undefined	/new-address
+
+20230519	01:52:22	4152a6bd-e4e9-4b3b-b0c1-27c7ae46b0dd	POST	undefined	/create-mnemonic
+
+20230519	01:52:50	0fc17cac-2eaf-40c8-85e0-b34c47d391b7	POST	undefined	/create-wallet-seed
+
+20230519	01:53:04	26b4e5cd-fbe4-4ded-a696-d69769b0f387	POST	undefined	/create-wallet
+
+20230519	01:53:06	76b4fc72-bc89-4b90-995f-f54b0292247a	POST	undefined	/new-address
+
+20230519	02:00:46	b5d4b3a7-068c-42b4-9bcb-78d61936b166	POST	undefined	/create-mnemonic
+
+20230519	02:01:09	08264d06-1995-4ceb-b79e-d632177e25c4	POST	undefined	/create-wallet-seed
+
+20230519	02:01:20	ced85f25-cd0a-4964-97dc-af20c9e8d451	POST	undefined	/create-wallet
+
+20230519	02:01:21	e8684f4e-ef7e-4bc1-bb80-722860e42085	POST	undefined	/set-wallet-seed
+
+20230519	02:17:20	a2ba4d88-9f8b-4757-b483-f2c56ae78e45	POST	undefined	/create-mnemonic
+
+20230519	02:17:37	b1e4388d-cc6b-46e0-91c8-bcff97504e2d	POST	undefined	/create-wallet-seed
+
+20230519	02:18:03	b7e555b7-8121-47f0-9107-ff1d4602d23c	POST	undefined	/create-wallet
+
+20230519	02:18:04	cded8e06-b114-420a-b279-edee4f174721	POST	undefined	/set-wallet-seed
+
+20230519	02:22:35	64d0dd51-f771-4070-afbf-e2ed29d4b26b	POST	undefined	/create-mnemonic
+
+20230519	02:22:58	f16ff852-ac09-4c44-981a-2f7e7bf04a2e	POST	undefined	/create-wallet-seed
+
+20230519	02:23:19	1b78f377-93ba-4302-be26-db796d64c655	POST	undefined	/create-wallet
+
+20230519	02:23:21	8fe4e221-5870-4376-9352-350586ff6005	POST	undefined	/set-wallet-seed
+
+20230519	02:29:41	420621a6-b154-47f6-a581-dbd4937cd1f3	POST	undefined	/create-mnemonic
+
+20230519	02:30:03	7be88ab0-cc0a-41f1-89e3-58ceb07a5c7d	POST	undefined	/create-wallet-seed
+
+20230519	02:30:20	49e56d9c-bd01-4f52-914c-20409826dae4	POST	undefined	/create-wallet
+
+20230519	02:30:28	23d8927e-db81-4ed7-94a9-70219d7a3743	POST	undefined	/set-wallet-seed
+
+20230519	02:40:27	fd68fa91-fc02-473e-880a-02021346b15b	POST	undefined	/create-mnemonic
+
+20230519	02:40:51	f089ce07-8c74-4eec-b4bc-5bc4c2ddf123	POST	undefined	/create-wallet-seed
+
+20230519	02:41:02	694f4a01-92d4-49a9-b026-eb897820f9b7	POST	undefined	/create-wallet
+
+20230519	02:41:03	505d9d36-a5e5-4d1f-8436-88dbbf821e8b	POST	undefined	/set-wallet-seed
+
+20230519	02:41:10	2c35d845-cce1-4c68-8eb2-18a37bba42e3	POST	undefined	/new-address
+
+20230519	03:04:38	f30715f7-93ad-4844-81f0-cb853905cd31	POST	undefined	/create-mnemonic
+
+20230519	03:04:52	d9bf6831-864c-47ef-9199-9800f90b53f2	POST	undefined	/create-wallet-seed
+
+20230519	03:05:08	24989607-6054-4a44-91d2-7347c976d23b	POST	undefined	/create-wallet
+
+20230519	03:05:10	b1d95d80-cf51-445d-969a-1ebb683a9273	POST	undefined	/set-wallet-seed
+
+20230519	03:05:15	92649e19-b9f2-45f5-b37e-bba966eda3c3	POST	undefined	/new-address
+
+20230519	03:13:24	2a5d67ae-6a16-4c9a-9a56-eac16eaca5a9	POST	undefined	/create-mnemonic
+
+20230519	03:13:41	f72d4e41-6e11-4c20-805c-d632846fbc15	POST	undefined	/create-wallet-seed
+
+20230519	03:13:54	6dcc1296-3d59-486a-8125-06da2f9a7c8e	POST	undefined	/create-wallet
+
+20230519	03:13:58	7b2683e8-07ad-4f9c-8acb-247f45fe3b26	POST	undefined	/set-wallet-seed
+
+20230519	03:14:05	b0a298f7-9a7b-43ce-be19-bf66dbbdbc07	POST	undefined	/new-address
+
+20230519	03:42:33	136e78ae-45b0-425a-ad9f-c20f5eb86485	POST	undefined	/create-mnemonic
+
+20230519	03:42:52	e44a8e0c-3064-4c1b-baf3-c60f92f7535f	POST	undefined	/create-wallet-seed
+
+20230519	03:43:07	60da87b3-bf2c-4ba1-8270-03f83a71bdef	POST	undefined	/create-wallet
+
+20230519	03:43:08	7c7bfacb-a3b9-4fc4-a863-0ef036510ae5	POST	undefined	/set-wallet-seed
+
+20230519	03:43:13	2bb78f0e-4fdf-4df0-a120-634a8a6c1f17	POST	undefined	/new-address
+
+20230519	04:21:43	3fdc4320-915b-470c-ac61-aea51746ba7b	POST	undefined	/create-mnemonic
+
+20230519	04:22:10	982000a9-4cad-4506-9fc3-e988d032f553	POST	undefined	/create-wallet-seed
+
+20230519	04:22:20	0b9368b0-65cc-4a32-bba9-dd2345f93a2e	POST	undefined	/create-wallet
+
+20230519	04:22:27	9681643a-8e8b-4270-92b4-0444a5b44b27	POST	undefined	/set-wallet-seed
+
+20230519	04:22:46	c4392942-05b7-4b7e-94ee-c54d4dcb5ade	POST	undefined	/new-address
+
