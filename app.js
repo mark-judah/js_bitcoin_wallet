@@ -8,10 +8,12 @@ const corsOptions=require("./config/corsOptions")
 
 const  homeRoute = require("./routes/web");
 const {registerUserRoute,loginUserRoute,generalBTCCommandsRoute, 
-   createWalletRoute,setWalletSeedRoute, getWalletInfoRoute, createWalletSeedRouter, 
-    createMnemonicRouter,getNewAddressRoute, dumpWalletRoute}  = require("./routes/api");
+   createWalletRoute,setWalletSeedRoute, getWalletInfoRoute, loadWalletRoute,createWalletSeedRouter, 
+    createMnemonicRouter,getNewAddressRoute, getAddressInfoRoute,getReceivedByAddressRoute,
+    listTransactionsRoute,dumpWalletRoute, listUnspentTransactionsRoute, createRawTransactionRoute, signRawTransactionRoute, sendRawTransactionRoute, getBlockchainInfoRoute, getNetworkInforoute, getBalancesRoute, getTransactionRoute, getInfoLNRoute, newAddressLNRoute, listFundsLNRoute, listNodesLNRoute, createConfigLNRoute, loadInstanceLNRoute, killInstanceLNRoute}  = require("./routes/api");
 
 const path=require('path');
+const { listFundsLN } = require("./controllers/lightningWalletController");
 
 // console.log(ENV);
 //move port to .env
@@ -46,13 +48,36 @@ app.use(customErrorHandler);
 app.use(homeRoute)
 app.use(registerUserRoute)
 app.use(loginUserRoute)
-app.use(generalBTCCommandsRoute)
+app.use(getBlockchainInfoRoute)
+app.use(getNetworkInforoute)
 app.use(createMnemonicRouter)
 app.use(createWalletRoute)
 app.use(setWalletSeedRoute)
 app.use(getWalletInfoRoute)
+app.use(loadWalletRoute)
 app.use(createWalletSeedRouter)
 app.use(getNewAddressRoute)
+app.use(getAddressInfoRoute)
+app.use(getReceivedByAddressRoute)
+app.use(getBalancesRoute)
+app.use(listTransactionsRoute)
+app.use(listUnspentTransactionsRoute)
+app.use(createRawTransactionRoute)
+app.use(signRawTransactionRoute)
+app.use(sendRawTransactionRoute)
+app.use(getTransactionRoute)
 app.use(dumpWalletRoute)
+
+
+
+///////////////////////////LIGHTNING ROUTES/////////////////////
+app.use(createConfigLNRoute)
+app.use(loadInstanceLNRoute)
+app.use(killInstanceLNRoute)
+app.use(getInfoLNRoute)
+app.use(newAddressLNRoute)
+app.use(listFundsLNRoute)
+app.use(listNodesLNRoute)
+
 
 app.listen(PORT,()=>console.log(`Server running on port ${PORT}`))
