@@ -11,6 +11,7 @@ const createConfig = async (req, res) => {
     const params = req.body;
     const walletAlias = params.walletAlias;
 
+    console.log(walletAlias)
     const port = await findFreePort()
 
     var network = 'network=testnet'
@@ -20,7 +21,7 @@ const createConfig = async (req, res) => {
     var bitcoin_rpcpassword = 'bitcoin-rpcpassword=123456'
     var bitcoin_rpcconnect = 'bitcoin-rpcconnect=127.0.0.1'
     var bitcoin_rpcport = 'bitcoin-rpcport=18332'
-    var bitcoin_cli = 'bitcoin-rpcport=18332'
+    var bitcoin_cli = 'bitcoin-cli=/bin/bitcoin-cli'
     var bitcoin_datadir = `bitcoin-datadir=/home/jk/.lightning/testnet/dirs/${walletAlias}`
     var announce_addr = '#announce-addr='
     var lightning_dir = `lightning-dir=/home/jk/.lightning/testnet/dirs/${walletAlias}`
@@ -28,7 +29,7 @@ const createConfig = async (req, res) => {
     var rpc_file_mode = 'rpc-file-mode=0600'
     var log_file = 'log-file=/home/jk/.lightning/lightning.log'
     var log_level = 'log-level=debug'
-    var addr = `addr=127.0.0.1:${port}`
+    var bind_addr = `bind-addr=0.0.0.0:${port}`
 
     const config = `
     ${network}\n
@@ -46,7 +47,7 @@ const createConfig = async (req, res) => {
     ${rpc_file_mode}\n
     ${log_file}\n
     ${log_level}\n
-    ${addr}\n`
+    ${bind_addr}\n`
 
     const homedir = require('os').homedir();
 
@@ -56,7 +57,7 @@ const createConfig = async (req, res) => {
             await file_system_promises.mkdir(path.join(homedir, '/.lightning/'))
         }
         await file_system_promises.appendFile(path.join(homedir, '/.lightning/testnet', `config-${walletAlias}`), config.replace(/ [ \r\n]+/gm, "\n").trim())
-        return res.json('Config file created');
+        return res.status(200).json('Config file created');
     } catch (err) {
         console.log(err)
         return res.status(500).json({ error: "Failed to create config file" });
@@ -88,7 +89,7 @@ const loadInstance = async (req, res) => {
             console.log(`child process exited with code ${code}`);
 
         });
-        return res.json('Instance loaded');
+        return res.status(200).json('Instance loaded');
     } catch (err) {
         console.log(err)
         return res.status(500).json({ error: "Failed to load instance" });
@@ -116,7 +117,9 @@ const killInstance = async (req, res) => {
 
 const getNodeInfo = async (req, res) => {
     const params = req.body;
-    const rpcFile = params.rpcFile;
+
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
 
     lightningRpc = new LightningRpc(rpcFile)
 
@@ -133,9 +136,53 @@ const getNodeInfo = async (req, res) => {
     }
 };
 
+const connectToNode = async (req, res) => {
+    const params = req.body;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    const id = params.id;
+    const host = params.host;
+    const port = params.port;
+
+    lightningRpc = new LightningRpc(rpcFile)
+    try {
+        console.log("Connect to node handler called");
+
+        const response = await lightningRpc.connect(id, host, port);
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error connecting to node:", error);
+        return res.status(500).json({ error: "Failed to connect to node" });
+    }
+};
+
+const listPeers = async (req, res) => {
+    const params = req.body;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+
+    lightningRpc = new LightningRpc(rpcFile)
+    try {
+        console.log("List peers handler called");
+
+        const response = await lightningRpc.listpeers();
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error listing peers: ", error);
+        return res.status(500).json({ error: "Failed to list peers" });
+    }
+};
+
 const listNodes = async (req, res) => {
     const params = req.body;
-    const rpcFile = params.rpcFile;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
 
     lightningRpc = new LightningRpc(rpcFile)
 
@@ -143,11 +190,11 @@ const listNodes = async (req, res) => {
         console.log("List Nodes handler called");
 
         const params = req.body;
-        const nodeID = params.nodeID;
+        // const nodeID = params.nodeID;
 
-        console.log(nodeID)
+        // console.log(nodeID)
 
-        const response = await lightningRpc.listnodes(nodeID);
+        const response = await lightningRpc.listnodes();
         console.log(response);
 
         return res.json(JSON.parse(response));
@@ -160,7 +207,8 @@ const listNodes = async (req, res) => {
 
 const newAddress = async (req, res) => {
     const params = req.body;
-    const rpcFile = params.rpcFile;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
 
     lightningRpc = new LightningRpc(rpcFile)
 
@@ -186,9 +234,259 @@ const newAddress = async (req, res) => {
     }
 };
 
+const fundChannel = async (req, res) => {
+    const params = req.body;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    const id = params.id;
+    const amount = params.amount;
+    const feerate = params.feerate;
+    const announce = params.announce;
+    const minconf = params.minconf;
+    const utxos = params.utxos;
+    const push_msat = params.push_msat;
+    const close_to = params.close_to;
+    const request_amt = params.request_amt;
+    const compact_lease = params.compact_lease;
+    const reserve = params.reserve;
+
+
+    lightningRpc = new LightningRpc(rpcFile)
+
+    try {
+        console.log("Fund channel handler called");
+        const response = await lightningRpc.fundchannel(id, amount, feerate, announce, minconf,
+            utxos, push_msat, close_to, request_amt, compact_lease);
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error(`Error funding channel: ${nodeID}:`, error);
+        return res.status(500).json({ error: `Failed to fund channel: ${nodeID}` });
+    }
+};
+
+const listChannels = async (req, res) => {
+    const params = req.body;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    lightningRpc = new LightningRpc(rpcFile)
+    try {
+        console.log("List channels handler called");
+
+        const response = await lightningRpc.listchannels();
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error listing channels:", error);
+        return res.status(500).json({ error: "Failed to list channels" });
+    }
+};
+
+const createInvoice = async (req, res) => {
+    const params = req.body;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    const amount_msat = params.amount_msat;
+    const label = params.label;
+    const description = params.description;
+    const expiry = params.expiry;
+    const fallbacks = params.fallbacks;
+    const preimage = params.preimage;
+    const cltv = params.cltv;
+    const deschashonly = params.deschashonly;
+    const exposeprivatechannels = params.exposeprivatechannels;
+
+    lightningRpc = new LightningRpc(rpcFile)
+    try {
+        console.log("Create invoice handler called");
+
+        const response = await lightningRpc.invoice(amount_msat, label, description, expiry, fallbacks,
+            preimage, exposeprivatechannels, cltv, deschashonly);
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error creating nvoice:", error);
+        return res.status(500).json({ error: "Failed to create invoice" });
+    }
+};
+
+const getRoute = async (req, res) => {
+    const params = req.body;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    const id = params.id;
+    const amount_msat = params.amount_msat;
+    const riskfactor = params.riskfactor;
+    const cltv = params.cltv;
+    const fromid = params.fromid;
+    const fuzzpercent = params.fuzzpercent;
+    const exclude = params.exclude;
+    const maxhops = params.maxhops;
+
+
+    lightningRpc = new LightningRpc(rpcFile)
+    try {
+        console.log("Get route handler called");
+
+        const response = await lightningRpc.getroute(id, amount_msat, riskfactor, cltv, fromid,
+            fuzzpercent, exclude, maxhops);
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error getting route:", error);
+        return res.status(500).json({ error: "Failed to get route" });
+    }
+};
+
+
+const payInvoice = async (req, res) => {
+    const params = req.body;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    const bolt11 = params.bolt11;
+    const amount_msat = params.amount_msat;
+    const label = params.label;
+    const riskfactor = params.riskfactor;
+    const maxfeepercent = params.maxfeepercent;
+    const retry_for = params.retry_for;
+    const maxdelay = params.maxdelay;
+    const exemptfee = params.exemptfee;
+    const localinvreqid = params.localinvreqid;
+    const exclude = params.exclude;
+    const maxfee = params.maxfee;
+    const description = params.description;
+
+    lightningRpc = new LightningRpc(rpcFile)
+    try {
+        console.log("pay invoice handler called");
+
+        const response = await lightningRpc.pay(bolt11, amount_msat, label, riskfactor,
+            maxfeepercent, retry_for, maxdelay, exemptfee,
+            localinvreqid, exclude, maxfee, description);
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error paying nvoice:", error);
+        return res.status(500).json({ error: "Failed to pay invoice" });
+    }
+};
+
+const sendPay = async (req, res) => {
+    const params = req.body;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    const route = params.route;
+    const payment_hash = params.payment_hash;
+    const label = params.label;
+    const amount_msat = params.amount_msat;
+    const bolt11 = params.bolt11;
+    const payment_secret = params.payment_secret;
+    const partid = params.partid;
+    const localinvreqid = params.localinvreqid;
+    const groupid = params.groupid;
+    const payment_metadata = params.payment_metadata;
+    const description = params.description;
+
+
+    lightningRpc = new LightningRpc(rpcFile)
+    try {
+        console.log("Send pay handler called");
+
+        const response = await lightningRpc.sendpay(route, payment_hash, label, amount_msat,
+            bolt11, payment_secret, partid, localinvreqid, groupid,
+            payment_metadata, description);
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error sending pay:", error);
+        return res.status(500).json({ error: "Failed to send pay" });
+    }
+};
+
+const getPayStatus = async (req, res) => {
+    const params = req.body;
+
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    lightningRpc = new LightningRpc(rpcFile)
+
+    try {
+        console.log("Get pay status handler called");
+
+        const response = await lightningRpc.paystatus();
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error retrieving pay status  info:", error);
+        return res.status(500).json({ error: "Failed to retrieve pay status info" });
+    }
+};
+
+const listPays = async (req, res) => {
+    const params = req.body;
+
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    lightningRpc = new LightningRpc(rpcFile)
+
+    try {
+        console.log("List pays handler called");
+
+        const response = await lightningRpc.listpays();
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error listing pays:", error);
+        return res.status(500).json({ error: "Failed to list pays" });
+    }
+};
+
+const waitSendPay = async (req, res) => {
+    const params = req.body;
+
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    const payment_hash = params.payment_hash;
+    const timeout = params.timeout;
+    const partid = params.partid;
+
+
+    lightningRpc = new LightningRpc(rpcFile)
+
+    try {
+        console.log("Wait send pay status handler called");
+
+        const response = await lightningRpc.waitsendpay(payment_hash, timeout, partid);
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error sending pay:", error);
+        return res.status(500).json({ error: "Failed to send pay" });
+    }
+};
+
 const listFunds = async (req, res) => {
     const params = req.body;
-    const rpcFile = params.rpcFile;
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
 
     lightningRpc = new LightningRpc(rpcFile)
     try {
@@ -203,6 +501,36 @@ const listFunds = async (req, res) => {
         return res.status(500).json({ error: "Failed to list funds" });
     }
 };
+
+const closeChannel = async (req, res) => {
+    const params = req.body;
+
+    const walletAlias = params.walletAlias;
+    const rpcFile = `/home/jk/.lightning/testnet/dirs/${walletAlias}/testnet/lightning-rpc`;
+
+    const id = params.id;
+    const unilateraltimeout = params.unilateraltimeout;
+    const destination = params.destination;
+    const fee_negotiation_step = params.fee_negotiation_step;
+    const wrong_funding = params.wrong_funding;
+    const force_lease_closed = params.force_lease_closed;
+    const feerange = params.feerange;
+
+    lightningRpc = new LightningRpc(rpcFile)
+
+    try {
+        console.log("Close channel handler called");
+
+        const response = await lightningRpc.close(id,unilateraltimeout,destination
+            ,fee_negotiation_step,wrong_funding,force_lease_closed, feerange);
+        console.log(response);
+
+        return res.json(JSON.parse(response));
+    } catch (error) {
+        console.error("Error closing channel:", error);
+        return res.status(500).json({ error: "Failed to close channel" });
+    }
+}
 
 
 async function findFreePort() {
@@ -236,9 +564,20 @@ module.exports = {
     createConfig,
     loadInstance,
     killInstance,
+    connectToNode,
+    listPeers,
+    getRoute,
     getNodeInfo,
     listNodes,
     newAddress,
-    listFunds
-
+    fundChannel,
+    listChannels,
+    createInvoice,
+    payInvoice,
+    sendPay,
+    waitSendPay,
+    getPayStatus,
+    listPays,
+    listFunds,
+    closeChannel
 }
