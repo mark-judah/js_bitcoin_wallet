@@ -74,7 +74,7 @@
 <p>The mobile client can make requests to the Node.js backend API routes to interact with the Bitcoin Core testnet as needed.</p>
 
 <h2>Frontend Interaction</h2>
-<p>The frontend client at <a href="https://github.com/mark-judah/bitcoin_wallet_client" target="_blank">Flutter bitcoin Client App </a> makes requests to this backend for system interactions.</p>
+<p>The frontend client at <a href="https://github.com/mark-judah/flutter_btc_wallet" target="_blank">Flutter bitcoin Client App </a> makes requests to this backend for system interactions.</p>
 
 
 </body>
