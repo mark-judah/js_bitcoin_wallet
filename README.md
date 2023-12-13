@@ -56,7 +56,7 @@
 <ol>
   <li>Clone the Node.js backend repository.</li>
   <pre><code>
-  git clone https://github.com/your-username/your-nodejs-backend.git
+  git clone https://github.com/mark-judah/js_bitcoin_wallet.git
   </code></pre>
   <li>Install project dependencies:</li>
   <pre><code>
@@ -72,6 +72,9 @@
 
 <h2>API Usage</h2>
 <p>The mobile client can make requests to the Node.js backend API routes to interact with the Bitcoin Core testnet as needed.</p>
+
+<h2>Frontend Interaction</h2>
+<p>The frontend client at <a href="https://github.com/mark-judah/bitcoin_wallet_client" target="_blank">ChainVote Dapp Client</a> makes requests to this backend for system interactions.</p>
 
 
 </body>
