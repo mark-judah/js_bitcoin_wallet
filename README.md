@@ -9,7 +9,12 @@
 
 <p>To set up Bitcoin Core running a full testnet node:</p>
 <ol>
-  <li>Download and install Bitcoin Core from the official website.</li>
+  <li>Download and install Bitcoin Core from the official website, this project use version 22.0.</li
+ <p>For detailed instructions on installing and configuring Bitcoin Core version 22.0, please refer to the following guide:</p>
+<p><a href="https://medium.com/coinmonks/ultimate-guide-to-bitcoin-testnet-fullnode-setup-b83da1bb22e" target="_blank">Ultimate Guide to Bitcoin Testnet Fullnode Setup</a></p>
+
+<p>This guide provides step-by-step instructions for setting up Bitcoin Core version 22.0 as a full testnet node. Following these instructions will help you prepare and run a full testnet node.</p>
+
   <li>Run Bitcoin Core with the following command to set up for testnet:</li>
   <pre><code>
   bitcoind -testnet -daemon
