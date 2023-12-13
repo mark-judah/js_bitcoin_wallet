@@ -4,7 +4,7 @@
 <body>
 
 <h1>Bitcoin Core Testnet Setup</h1>
-<p> The Node.js and Express backend connects to a local Bitcoin Core, running as a full testnet node. Using JSON-RPC calls, it handles tasks like creating wallets, managing seeds and addresses, checking transactions, and interacting with block explorers. This setup works  with a mobile app, letting users securely manage their crypto—creating wallets, checking balances, and making transactions</p>
+<p> This project has a backend and a flutter  client application, the backend  connects to a local Bitcoin Core node, running a full testnet node. Using JSON-RPC calls to the local node, it handles tasks like creating wallets, managing seeds and addresses, checking transactions, and interacting with block explorers. This setup works with a mobile app, letting users securely manage their crypto—creating wallets, checking balances, and making transactions.</p>
 <h2>Installing Bitcoin Core Testnet</h2>
 
 <p>To set up Bitcoin Core running a full testnet node:</p>
